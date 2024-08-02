@@ -1,0 +1,36 @@
+.content-detail {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+
+  &-info {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    padding: 2rem;
+    background: #eaeaea;
+    border-radius: 2rem;
+
+    &_detail {
+      display: grid;
+      grid-auto-flow: row;
+      text-align: left;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #666;
+  }
+}

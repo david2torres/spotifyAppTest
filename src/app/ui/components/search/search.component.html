@@ -1,0 +1,46 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      formControlName="query"
+      placeholder="Enter a song, artist, or album"
+    />
+  </mat-form-field>
+  <mat-radio-group formControlName="type">
+    <mat-radio-button value="track">Tracks</mat-radio-button>
+    <mat-radio-button value="artist">Artists</mat-radio-button>
+    <mat-radio-button value="album">Albums</mat-radio-button>
+  </mat-radio-group>
+  <button mat-raised-button type="submit">Search</button>
+</form>
+
+<div *ngIf="results" class="content-card">
+  <div *ngFor="let item of results">
+    <div
+      *ngIf="item"
+      class="content-card-info"
+      (click)="redirectToDetail(item.type, item.id)"
+    >
+      <img
+        *ngIf="item.album"
+        [src]="item.album.images[2].url"
+        alt="{{ item.name }}"
+      />
+      <img
+        *ngIf="item.images"
+        [src]="item.images[2]?.url"
+        alt="{{ item.name }}"
+      />
+      <div class="content-card-info_text">{{ item.name }}</div>
+    </div>
+  </div>
+</div>
+
+<mat-paginator
+  [length]="totalResults"
+  [pageSize]="pageSize"
+  (page)="onPageChange($event)"
+  *ngIf="totalResults > pageSize"
+>
+</mat-paginator>

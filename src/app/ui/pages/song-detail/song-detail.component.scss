@@ -1,0 +1,11 @@
+.content-song {
+    padding: 2rem;
+    display: grid;
+    justify-content: center;
+
+    &-detail {
+        padding: 2rem;
+        background: #eaeaea;
+        border-radius: 2rem;
+    }
+}

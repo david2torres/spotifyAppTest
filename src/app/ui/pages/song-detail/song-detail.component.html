@@ -1,0 +1,6 @@
+<div class="content-song">
+  <div class="content-song-detail" *ngIf="song">
+    <app-detail [item]="song" [type]="'song'"></app-detail>
+    <app-player [previewUrl]="song.preview_url"></app-player>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="content-detail">
+  <div class="content-detail-info" *ngIf="item" >
+    <img
+      [src]="item?.album?.images[0]?.url || item.images[0].url"
+      alt="{{ item.name }}"
+    />
+    <div class="content-detail-info_detail" >
+      <h1>{{ item.name }}</h1>
+      <p *ngIf="type === 'artist'">Followers: {{ item.followers.total }}</p>
+      <p *ngIf="type === 'artist'">Genres: {{ item.genres.join(", ") }}</p>
+      <p *ngIf="type !== 'artist'">Artist: {{ item.artists[0].name }}</p>
+      <p *ngIf="type === 'album'">Release Date: {{ item.release_date }}</p>
+    </div>
+  </div>
+</div>

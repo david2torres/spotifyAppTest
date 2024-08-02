@@ -1,0 +1,36 @@
+.content-card {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, 9rem);
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &-info {
+        cursor: pointer;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: 1fr 0fr;
+        gap: 0rem;
+        justify-content: center;
+        justify-items: center;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 2px 2px 12px #0000001F;
+        border-radius: 10px;
+        min-height: 10rem;
+        min-width: 6rem;
+        padding: 2rem;
+
+        &:hover {
+            background: #e5e5e5 0% 0% no-repeat padding-box;
+
+        }
+
+        &_text {
+            text-align: center;
+            font-size: medium;
+            font-family: serif;
+        }
+    }
+}
